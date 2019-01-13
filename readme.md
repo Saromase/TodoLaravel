@@ -1,1 +1,1 @@
-sudo chown -R romain:romain app/
+sudo chown -R user:group app/
