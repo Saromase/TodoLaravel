@@ -15,4 +15,4 @@ mix.js('resources/js/app.js', 'public/js')
    .js('resources/js/helper/modal.js', 'public/js')
    .js('resources/js/calendar.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
-   .css('~fullcalendar/fullcalendar.css', 'public/css');
+   .css('~bootstrap-colorpicker/bootstrap-colorpicker.css', 'public/css');

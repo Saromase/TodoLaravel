@@ -8,9 +8,10 @@ window._ = require('lodash');
  */
 
 try {
-    window.$ = window.jQuery = require('jquery');
+    window.$ = window.jQuery = jquery = require('jquery');
     window.Popper = require('popper.js').default;
     require('bootstrap');
+    
 } catch (e) {}
 
 /**
@@ -50,6 +51,7 @@ window.moment = require('moment');
 window.fullcalendar = require('fullcalendar');
 
 
+window.colorpicker = require('bootstrap-colorpicker');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

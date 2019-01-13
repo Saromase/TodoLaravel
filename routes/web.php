@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/hello', function () {
     return view('fullcalendar');
-});
+})->middleware('auth');
 
 Route::prefix('postit')->group(function () {
     Route::get('/', 'PostIt\PostItController@index')->name('postitIndex');

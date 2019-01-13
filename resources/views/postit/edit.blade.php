@@ -11,11 +11,11 @@
                     <form action="{{(isset($post)) ? route('postitUpdate') : route('postitCreate')}}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Nom :</label>
+                            <label for="name">Nom</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{ (isset($post)) ? $post->name : '' }}">
                         </div>
                         <div class="form-group">
-                            <label for="description">Description :</label>
+                            <label for="description">Description</label>
                             <textarea class="form-control" id="description" rows="3" name="description">{{ (isset($post)) ? $post->description : '' }}</textarea>
                         </div>
 

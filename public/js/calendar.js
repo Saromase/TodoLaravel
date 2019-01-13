@@ -94,17 +94,39 @@
 /***/ (function(module, exports) {
 
 window.onload = function () {
+  $('[data-toggle="popover"]').popover();
   $("#calendar").fullCalendar({
     locale: 'fr',
     header: {
       left: 'title',
-      center: '',
+      center: 'addEventButton',
       right: 'today prev,next'
     },
     events: [{
       title: 'Bonne année',
-      start: '2019-01-01'
-    }]
+      start: '2019-01-01',
+      description: 'Bienvenue en 2019'
+    }],
+    eventRender: function eventRender(eventObj, element) {
+      element.popover({
+        title: eventObj.title,
+        content: eventObj.description,
+        trigger: 'click',
+        placement: 'top',
+        container: 'body'
+      });
+    },
+    customButtons: {
+      addEventButton: {
+        text: 'Ajouter un événement',
+        click: function click() {
+          $("#exampleModal").modal();
+          $('#modal-accept').on('click', function (event) {
+            console.log(event);
+          });
+        }
+      }
+    }
   });
 };
 

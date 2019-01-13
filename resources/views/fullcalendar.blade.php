@@ -4,6 +4,8 @@
     <script src="{{ asset('js/calendar.js') }}" defer></script>
 @endsection
 
+@include('helper.modal_event')
+
 @section('content')
 <div class="container">
     <div class="card">

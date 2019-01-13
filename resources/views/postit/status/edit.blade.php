@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('scripts')
+    <script src="{{ asset('js/calendar.js') }}" defer></script>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,7 +13,7 @@
 
                 <div class="card-body">
                     @if ($errors->any())
-                        @include('helper.modal', ['errors' => $errors])
+                        @include('helper.modal_error', ['errors' => $errors])
                     @endif
                     <form action="{{(isset($status)) ? route('postitStatusUpdate') : route('postitStatusCreate')}}" method="post">
                         @csrf
