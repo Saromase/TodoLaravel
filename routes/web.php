@@ -26,6 +26,7 @@ Route::prefix('postit')->group(function () {
     Route::get('/edit/{id}', 'PostIt\PostItController@edit')->name('postitEdit');
     Route::post('/update', 'PostIt\PostItController@updateOne')->name('postitUpdate');
     Route::get('/delete/{id}', 'PostIt\PostItController@deleteOne')->name('postitDeleteOne');
+    Route::get('/duplicate/{id}', 'PostIt\PostItController@duplicateOne')->name('postitDuplicateOne');
     
     Route::prefix('status')->group(function () {
         Route::get('/', 'PostIt\PostItStatusController@index')->name('postitStatusIndex');

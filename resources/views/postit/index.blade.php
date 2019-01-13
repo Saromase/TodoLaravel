@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     @foreach ($posts->chunk(4) as $chunk) 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-3">
         @foreach ($chunk as $post)
         <div class="col-md-3">
             <div class="card">
@@ -15,8 +15,8 @@
 
                 <div class="card-footer">
                     <a href="{{ route('postitEdit', ['id' => $post->id])}}" title="Modifier"><button type="button" class="btn btn-outline-dark btn-sm"><i class="fas fa-edit"></i></button></a>
+                    <a href="{{ route('postitDuplicateOne', ['id' => $post->id])}}" title="Dupliquer"><button type="button" class="btn btn-outline-dark btn-sm"><i class="fas fa-copy"></i></button></a>
                     <a href="{{ route('postitDeleteOne', ['id' => $post->id])}}" title="Supprimer"><button type="button" class="btn btn-outline-dark btn-sm"><i class="fas fa-trash-alt"></i></button></a>
-                    <a href="#" title="Supprimer"><button type="button" class="btn btn-outline-dark btn-sm"><i class="fas fa-copy"></i></button></a>
                 </div>
             </div>
         </div>

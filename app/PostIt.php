@@ -69,4 +69,12 @@ class PostIt extends Model
     {
         return PostIt::where('id', '=', $id)->delete();
     }
+
+    public static function duplicateOne ($id)
+    {
+        $post = PostIt::where('id', '=', $id)->first();
+        $post = $post->replicate();
+
+        return $post->save();
+    }
 }

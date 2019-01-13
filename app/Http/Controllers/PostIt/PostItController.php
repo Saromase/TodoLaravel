@@ -105,6 +105,18 @@ class PostItController extends Controller
 
         return redirect()->route('postitIndex');
     }
+
+    /**
+     * Post form to add post it.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function duplicateOne ($id)
+    {
+        PostIt::duplicateOne($id);
+
+        return redirect()->route('postitIndex');
+    }
 }
 
 
