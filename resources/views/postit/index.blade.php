@@ -24,6 +24,5 @@
     </div>
     @endforeach
     <a href="{{route('postitAdd')}}"><button type="button" class="btn btn-outline-success btn-sm" style="position: absolute; left: 91%; bottom: 7%;"><i class="fas fa-plus"></i></button></a>
-
 </div>
 @endsection

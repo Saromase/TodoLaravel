@@ -102,7 +102,7 @@ class PostItStatus extends Model
         $count = PostIt::where('status', '=', $id)
             ->whereNull('deleted_at')
             ->count();
-        
+
         return ($count === 0) ? true : false;
     }
 }

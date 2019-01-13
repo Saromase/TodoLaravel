@@ -103,7 +103,7 @@ class PostItStatusController extends Controller
         if (PostItStatus::checkUse($id)) {
             PostItStatus::deleteOne($id);
         }
-        
+
         return redirect()->route('postitStatusIndex');
     }
 }
