@@ -32,4 +32,15 @@ services:
       - "MYSQL_USER=homestead"
       - "MYSQL_PASSWORD=homestead"
     ports:
-       - "3306:3306"
+      - "3306:3306"
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - "MYSQL_ROOT_PASSWORD=secret"
+      - "MYSQL_DATABASE=homestead"
+      - "MYSQL_PASSWORD=homestead"
+    ports:
+          - "80:80"
+    links:
+          # for mysql container
+      - "mysql:db"
