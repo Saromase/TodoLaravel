@@ -49,6 +49,18 @@ class AppTables extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        Schema::create('calendar_events', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('description');
+            $table->date('start');
+            $table->date('end');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
+            $table->softDeletes();
+        });
         
     }
 
@@ -62,6 +74,8 @@ class AppTables extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_resets');
         Schema::dropIfExists('postit');
+        Schema::dropIfExists('postit_status');
+        Schema::dropIfExists('calendarEvent');
 
     }
 }

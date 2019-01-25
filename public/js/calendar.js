@@ -94,7 +94,15 @@
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  $('[data-toggle="popover"]').popover();
+  $('[data-toggle="popover"]').popover(); // var events = [
+  //     {
+  //         title : 'Bonne année',
+  //         start : '2019-01-01',
+  //         end   : '2019-01-01',
+  //         description : 'Bienvenue en 2019'
+  //     }
+  // ];
+
   $("#calendar").fullCalendar({
     locale: 'fr',
     header: {
@@ -102,11 +110,7 @@ window.onload = function () {
       center: 'addEventButton',
       right: 'today prev,next'
     },
-    events: [{
-      title: 'Bonne année',
-      start: '2019-01-01',
-      description: 'Bienvenue en 2019'
-    }],
+    events: events,
     eventRender: function eventRender(eventObj, element) {
       element.popover({
         title: eventObj.title,
@@ -122,7 +126,21 @@ window.onload = function () {
         click: function click() {
           $("#exampleModal").modal();
           $('#modal-accept').on('click', function (event) {
-            console.log(event);
+            console.log(document.getElementById('title').value);
+            axios.post('/calendar/event/create', {
+              title: document.getElementById('title').value,
+              description: document.getElementById('description').value,
+              start: document.getElementById('date_start').value,
+              end: document.getElementById('date_end').value,
+              user_id: document.getElementById('user_id').value
+            }).then(function (response) {
+              // handle success
+              console.log(response);
+            }).catch(function (error) {
+              // handle error
+              console.log(error);
+            }).then(function () {// always executed
+            });
           });
         }
       }

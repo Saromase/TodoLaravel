@@ -14,8 +14,8 @@
                 <form action="" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" class="form-control" id="name" name="name" value="">
+                        <label for="title">Titre</label>
+                        <input type="text" class="form-control" id="title" name="title" value="">
                     </div>
 
                     <div class="form-group">
@@ -33,7 +33,7 @@
                         <input type="date" class="form-control" id="date_end" name="date_end" value="">
                     </div>
 
-                    <input type="hidden" value="{{ Auth::id() }}" name="user_id">
+                    <input type="hidden" value="{{ Auth::id() }}" name="user_id" id="user_id">
                 </form>
             </div>
             <div class="modal-footer">

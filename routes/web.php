@@ -38,6 +38,11 @@ Route::prefix('postit')->group(function () {
     });
 });
 
+Route::prefix('calendar')->group(function () {
+    Route::get('/', 'Calendar\CalendarController@index')->name('calendarIndex');
+    Route::post('/event/create', 'Calendar\CalendarController@createEvent')->name('calendarCreateEvent');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
